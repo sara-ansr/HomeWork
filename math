@@ -1,0 +1,93 @@
+class MatheMatik():
+    def plus(self):
+        s1 = int(input("soorate kasre aval ra vared konid:"))
+        m1 = int(input("makhraje kasre aval ra vared konid:"))
+        s2 = int(input("soorate kasre dovom ra vared konid:"))
+        m2 = int(input("makhraje kasre dovom ra vared konid:"))
+        print(s1, "/", m1, "+", s2, "/", m2)
+        if m2 == m1:
+            s = s1 + s2
+            print("javab shoma:")
+            print(s, "/", m2)
+
+        else:
+            result_s = (s1 * m2) + (s2 * m1)
+            result_m = m1 * m2
+            print("javab shpma:")
+            print(result_s, "/", result_m)
+
+    def minus(self):
+        s1 = int(input("soorate kasre aval ra vared konid:"))
+        m1 = int(input("makhraje kasre aval ra vared konid:"))
+        s2 = int(input("soorate kasre dovom ra vared konid:"))
+        m2 = int(input("makhraje kasre dovom ra vared konid:"))
+        print(s1, "/", m1, "-", s2, "/", m2)
+        if m2 == m1:
+            s = s1 - s2
+            print("javab shoma:")
+            print(s, "/", m2)
+        else:
+            result_s = (s1 * m2) - (s2 * m1)
+            result_m = m1 * m2
+            print("javab shpma:")
+            print(result_s, "/", result_m)
+
+    def deduction_to_nomber(self):
+        s1 = int(input("soorate kasre ra vared konid:"))
+        m1 = int(input("makhraje kasre ra vared konid:"))
+        print(s1, "/", m1)
+        end = (s1 / m1)
+        print(end)
+
+    def divided(self):
+        s1 = int(input("soorate kasre aval ra vared konid:"))
+        m1 = int(input("makhraje kasre aval ra vared konid:"))
+        s2 = int(input("soorate kasre dovom ra vared konid:"))
+        m2 = int(input("makhraje kasre dovom ra vared konid:"))
+        print(s1, "/", m1, "÷", s2, "/", m2)
+        end_solve = (s1 * m2), "/", (s2 * m1)
+        print(end_solve)
+
+    def multiplied(self):
+        s1 = int(input("soorate kasre aval ra vared konid:"))
+        m1 = int(input("makhraje kasre aval ra vared konid:"))
+        s2 = int(input("soorate kasre dovom ra vared konid:"))
+        m2 = int(input("makhraje kasre dovom ra vared konid:"))
+        print(s1, "/", m1, "×", s2, "/", m2)
+        solve_multiplied = (s1 * s2), "/", (m1 * m2)
+        print(solve_multiplied)
+
+    def Math(self):
+        while True:
+            print("""lotfan bakhshe morede nazar ra entekhab konid:
+
+                     1-plus(+)
+                        2-minus (-)
+                            3-deduction to nomber
+                        4-divided(÷)
+                     5-multiplied(×)
+            """)
+            user_entekhab = input("==>")
+            try:
+                user_entekhab = int(user_entekhab)
+            except:
+                print("lotfan adad beine 1 ta 5 vared konid")
+                continue
+
+            if user_entekhab == 1:
+                print(MatheMatik.plus(self))
+            elif user_entekhab == 2:
+                print(MatheMatik.minus(self))
+            elif user_entekhab == 3:
+                print(MatheMatik.deduction_to_nomber(self))
+            elif user_entekhab == 4:
+                print(MatheMatik.divided(self))
+            elif user_entekhab == 5:
+                print(MatheMatik.multiplied(self))
+            else:
+                print("lotfan adadi beine 1 ta 5 entekhab konid")
+
+
+riazi = MatheMatik()
+
+print(riazi.Math())
